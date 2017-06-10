@@ -1,2 +1,2 @@
-[tower]
+[pg_server]
 localhost ansible_connection=local
