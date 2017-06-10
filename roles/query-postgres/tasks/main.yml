@@ -6,7 +6,8 @@
     mode: 0600
     
 - name: Copy db query file
-  copy: src=job_failure_query.sql
+  copy: 
+    src: job_failure_query.sql
     dest: /opt/job_failure_query.sql
     mode: 0755
 
