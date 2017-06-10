@@ -1,0 +1,8 @@
+---
+# This playbook used to query Tower db for job failures. 
+
+- hosts: tower
+  remote_user: root
+  become: true
+  roles:
+    - query-postgres

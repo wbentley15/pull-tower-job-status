@@ -1,0 +1,5 @@
+# Here are variables related to outputting Tower job failures into a file
+pg_user: awx
+pg_db: awx
+pg_password: passwd79
+output_location: /opt/tower_job_failure_output.txt

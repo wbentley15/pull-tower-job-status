@@ -1,0 +1,1 @@
+select * from main_unifiedjob where failed = 't' AND finished > current_timestamp - interval '5 minutes';

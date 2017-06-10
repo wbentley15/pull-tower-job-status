@@ -1,0 +1,14 @@
+---
+- name: Dropping pgpass file
+  template: 
+    src: pgpass
+    dest: /root/.pgpass
+    mode: 0600
+    
+- name: Copy db query file
+  copy: src=job_failure_query.sql
+    dest: /opt/job_failure_query.sql
+    mode: 0755
+
+- name: Execute Postgres query
+  shell: psql -U "{{ pg_user }}" -d "{{ pg_db }}" -f /opt/job_failure_query.sql -o "{{ output_location }}" -A -t -w
