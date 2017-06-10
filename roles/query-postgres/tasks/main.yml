@@ -1,4 +1,10 @@
 ---
+- name: Create rolling log file
+  copy: 
+    src: tower_job_failure.log
+    dest: /opt/tower_job_failure.log
+    mode: 0755
+
 - name: Dropping pgpass file
   template: 
     src: pgpass
@@ -13,3 +19,6 @@
 
 - name: Execute Postgres query
   shell: psql -U "{{ pg_user }}" -d "{{ pg_db }}" -f /opt/job_failure_query.sql -o "{{ output_location }}" -A -t -w
+  
+- name: Append current failures to log
+  shell: cat "{{ output_location }}" >> /opt/tower_job_failure.log
