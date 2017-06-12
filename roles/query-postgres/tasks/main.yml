@@ -15,4 +15,4 @@
   shell: psql -U "{{ pg_user }}" -d "{{ pg_db }}" -f /opt/job_failure_query.sql -o "{{ output_location }}" -A -t -w
   
 - name: Append current failures to log
-  shell: cat "{{ output_location }}" >> /var/log/tower/tower_job_failure.log
+  shell: cat "{{ output_location }}" >> "{{ logfile_location }}"

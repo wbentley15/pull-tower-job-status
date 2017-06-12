@@ -3,3 +3,4 @@ pg_user: awx
 pg_db: awx
 pg_password: passwd79
 output_location: /opt/tower_job_failure_output.txt
+logfile_location: /var/log/tower/tower_job_failure.log
