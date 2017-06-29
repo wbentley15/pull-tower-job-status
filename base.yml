@@ -2,6 +2,5 @@
 # This playbook used to query Tower db for job failures. 
 
 - hosts: pg_server
-  become: true
   roles:
     - query-postgres
