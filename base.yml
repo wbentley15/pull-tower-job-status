@@ -2,7 +2,6 @@
 # This playbook used to query Tower db for job failures. 
 
 - hosts: pg_server
-  remote_user: root
   become: true
   roles:
     - query-postgres
